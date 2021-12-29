@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.MasayukiSuda:BubbleLayout:v1.2.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/43d1321c794f663112af938a6c7f1acb/transformed/jetified-BubbleLayout-v1.2.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/43d1321c794f663112af938a6c7f1acb/transformed/jetified-BubbleLayout-v1.2.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/43d1321c794f663112af938a6c7f1acb/transformed/jetified-BubbleLayout-v1.2.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MasayukiSuda/BubbleLayout/v1.2.2/b1c995f2866191712d3ab551b8e438cbe193d260/BubbleLayout-v1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

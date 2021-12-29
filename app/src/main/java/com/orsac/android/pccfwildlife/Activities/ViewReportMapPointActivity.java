@@ -2,12 +2,14 @@ package com.orsac.android.pccfwildlife.Activities;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -18,14 +20,20 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.Gson;
 import com.google.maps.android.geojson.GeoJsonFeature;
 import com.google.maps.android.geojson.GeoJsonLayer;
 import com.google.maps.android.geojson.GeoJsonPolygonStyle;
 import com.orsac.android.pccfwildlife.Fragments.MapFragment;
 import com.orsac.android.pccfwildlife.Fragments.ViewReportFragment;
+import com.orsac.android.pccfwildlife.Model.AllLayerModel.CircleRequestObj;
+import com.orsac.android.pccfwildlife.Model.AllLayerModel.DivisionRequestobj;
+import com.orsac.android.pccfwildlife.Model.AllLayerModel.MapDataResponse;
+import com.orsac.android.pccfwildlife.Model.AllLayerModel.RangeRequestObj;
 import com.orsac.android.pccfwildlife.MyUtils.PermissionUtils;
 import com.orsac.android.pccfwildlife.R;
 import com.orsac.android.pccfwildlife.RetrofitCall.RetrofitClient;
+import com.orsac.android.pccfwildlife.RetrofitCall.RetrofitInterface;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -37,9 +45,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ViewReportMapPointActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -49,16 +63,14 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
     LatLng elephant_report_point;
     TextView satellite_txt,street_txt,div,rng,section,beat,area,totalNo,herdNo,top_tv;
     LinearLayout filter_LL,map_type_LL,info_window_ll,div_ll,rng_ll,section_ll,beat_ll,area_ll,elephant_ll;
-    GeoJsonLayer stateLayer=null;
-    JSONObject state_JsonResponse;
-    LatLng latLng=null, layer_latlng=null;
+    GeoJsonLayer divisionLayer=null,rangeLayer=null,stateLayer=null,circleLayer=null;
+    JSONObject geoJsonResponse,state_JsonResponse,rangeJsonResponse,circleJsonResponse;
     String divisionId="",mapTypeName="",reportType="",division="",range="",
             total="",herd="",sighting_date="",reportImg="";
-    JSONObject geoJsonResponse;
-    GeoJsonLayer divisionLayer=null;
     LinearLayout progress_bar_LL;
-    String divn_name="",area_sq="",range_name="";
-//    public String map_url="http://14.98.253.214:8087";//old geoserver link
+    String divn_name="",area_sq="",range_name="",circle_name;
+    LatLng latLng=null,layer_latlng=null,range_layer_latlng=null;
+    //    public String map_url="http://14.98.253.214:8087";//old geoserver link
     public String map_url="http://164.164.122.69:8080";//geoserver link
 
 
@@ -97,8 +109,6 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
             }else {
                 checkDivisionIdForMapBoundary(divisionId);
             }
-
-
 
 
         }catch (Exception e){
@@ -153,7 +163,7 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
                 }
             });
 
-             info_window_ll.setOnClickListener(new View.OnClickListener() {
+            info_window_ll.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     info_window_ll.setVisibility(View.GONE);
@@ -503,8 +513,8 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
                 mapTypeName="PCCFWILDLIFE1:sunabeda_division_boundary";
             }
 
-//            new CallMapDivisionLayer().execute(mapTypeName,divisionId);
-             new CallMapDivisionLayer().execute(divisionId);
+//             new CallMapDivisionLayer().execute(divisionId);
+            callMapApi(divisionId,"getDivisionGeojson","division");//new map layer api call
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -690,5 +700,359 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
             }
         }
     }
+
+    public void callMapApi(String id,String layerNm,String type) {
+        try {
+            progress_bar_LL.setVisibility(View.VISIBLE);
+            RetrofitInterface retrofitInterface=RetrofitClient.getMapRequestClient().create(RetrofitInterface.class);
+
+            if (type.equalsIgnoreCase("circle")){
+
+                CircleRequestObj layerRequestObj = new CircleRequestObj(id);
+                String request = new Gson().toJson(layerRequestObj);
+
+                // Here the json data is add to a hash map with key data
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("data", request);
+
+                retrofitInterface.callMapApi(params,layerNm).enqueue(new Callback<MapDataResponse>() {
+                    @Override
+                    public void onResponse(Call<MapDataResponse> call, Response<MapDataResponse> response) {
+
+                        if (response.isSuccessful()){
+
+//                            JSONObject jsonObject=new JSONObject(response.body().getPost().get(0).getGeojson());
+//                            jsonObject.getString("coordinates");
+//                            Log.i("Map_response",jsonObject.getString("coordinates"));
+
+                            try{
+                                if (response.body().getPost()!=null){
+
+                                    for (int i=0;i<response.body().getPost().size();i++){
+                                        circleJsonResponse=new JSONObject(response.body().getPost().get(i).getGeojson());
+                                        circle_name=response.body().getPost().get(i).getLayer_name();
+                                    }
+                                    //for putting GeoJsonLayer on Map with json response coming from geoserver
+                                    circleLayer=new GeoJsonLayer(map,circleJsonResponse);
+//                    callToGetLatlngFromBoundary(circleJsonResponse,6);//Get latlng to zoom from state boundary
+
+//                                    if (!circleCode.equalsIgnoreCase("All")&&
+//                                            !circleCode.equalsIgnoreCase("-1")){
+//                                        callToGetLatLngCircleBoundary(circleJsonResponse,5);//for single selection circle zoom
+//                                    }else {
+//                                        callToGetLatLngCircleBoundary(circleJsonResponse,6);//for all circle zoom
+//                                    }
+
+                                    GeoJsonPolygonStyle polyStyle =circleLayer.getDefaultPolygonStyle();
+                                    polyStyle.setStrokeColor(getResources().getColor(R.color.circle_boundary_color));
+                                    polyStyle.setStrokeWidth(5);
+                                    circleLayer.addLayerToMap();
+                                }
+
+                            }catch(Exception e) {
+                                progress_bar_LL.setVisibility(View.GONE);
+                                e.printStackTrace();
+                            }
+                        }else {
+                            Toast.makeText(ViewReportMapPointActivity.this, "Please try again !", Toast.LENGTH_SHORT).show();
+                            progress_bar_LL.setVisibility(View.GONE);
+                            Log.i("Map_response",response.body().getPost().toString());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<MapDataResponse> call, Throwable t) {
+                        Toast.makeText(ViewReportMapPointActivity.this, "Please try again !", Toast.LENGTH_SHORT).show();
+                        progress_bar_LL.setVisibility(View.GONE);
+                        Log.i("Map_response",call.toString());
+                    }
+                });
+
+            }else  if (type.equalsIgnoreCase("division")){
+
+                DivisionRequestobj layerRequestObj = new DivisionRequestobj(id);
+                String request = new Gson().toJson(layerRequestObj);
+
+                // Here the json data is add to a hash map with key data
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("data", request);
+                Log.i("Map_response",params.toString());
+
+                retrofitInterface.callMapApi(params,layerNm).enqueue(new Callback<MapDataResponse>() {
+                    @Override
+                    public void onResponse(Call<MapDataResponse> call, Response<MapDataResponse> response) {
+
+                        if (response.isSuccessful()){
+
+                            try {
+                                if (response.body().getPost()!=null){
+
+                                    for (int i=0;i<response.body().getPost().size();i++) {
+                                        geoJsonResponse = new JSONObject(response.body().getPost().get(i).getGeojson());
+                                        area_sq=response.body().getPost().get(i).getArea();
+                                        divn_name=response.body().getPost().get(i).getLayer_name();
+                                    }
+                                    try{
+                                        //for putting GeoJsonLayer on Map with json response coming from geoserver
+                                        divisionLayer=new GeoJsonLayer(map,geoJsonResponse);
+                                        progress_bar_LL.setVisibility(View.GONE);
+
+                                        ArrayList<LatLng> listdata = new ArrayList<LatLng>();
+//                                    JSONArray feature_jsonArray = geoJsonResponse.getJSONArray("features");
+//                                    JSONObject geometry_json=null;
+//
+//                                    for (int i=0;i<feature_jsonArray.length();i++) {
+//                                        try {
+//                                            geometry_json = feature_jsonArray.getJSONObject(i).getJSONObject("geometry");
+//                                        } catch (Exception e) {
+//                                            e.printStackTrace();
+//                                        }
+//                                    }
+//
+                                        JSONArray coordinate_jsonArray = geoJsonResponse.getJSONArray("coordinates");
+                                        JSONArray first_jsonArray=null,second_jsonArr=null,third_jsonArr=null;
+                                        first_jsonArray=coordinate_jsonArray.getJSONArray(0);
+//                                    JSONObject properties_json=feature_jsonArray.getJSONObject(0).getJSONObject("properties");
+
+//                                    try {
+////                                        divn_name=properties_json.getString("name_e");
+//                                        areaSquare=Long.parseLong(area_sq)/1000000;
+                                        Log.i("area",""+Double.parseDouble(area_sq)/1000000);
+
+////                        area_sq=properties_json.getString("area_sqkm");
+                                        area_ll.setVisibility(View.VISIBLE);
+//                                    }catch (Exception e){
+////                        divn_name=properties_json.getString("division");
+////                                        divn_name=properties_json.getString("name_e");
+//                                        area_ll.setVisibility(View.GONE);
+//                                        e.printStackTrace();
+//                                    }
+                                        second_jsonArr = first_jsonArray.getJSONArray(0);
+//
+                                        for (int j = 0; j < second_jsonArr.length(); j++) {
+                                            third_jsonArr = second_jsonArr.getJSONArray(j);
+                                            String[] coord = third_jsonArr.toString().split(",");
+                                            double x = Double.parseDouble(coord[0].replace("[",""));
+                                            double y = Double.parseDouble(coord[1].replace("]",""));
+                                            listdata.add(new LatLng(y,x));
+                                            layer_latlng=new LatLng(y,x);//(latitude,longitude)- It will zoom by taking to this latlng
+                                        }
+                                        GeoJsonPolygonStyle polyStyle =divisionLayer.getDefaultPolygonStyle();
+                                        polyStyle.setStrokeColor(getResources().getColor(R.color.black));
+                                        polyStyle.setStrokeWidth(7);
+
+                                        divisionLayer.addLayerToMap();
+
+                                        info_window_ll.setVisibility(View.GONE);
+                                        divisionLayer.setOnFeatureClickListener(new GeoJsonLayer.GeoJsonOnFeatureClickListener() {
+                                            @Override
+                                            public void onFeatureClick(GeoJsonFeature geoJsonFeature) {
+
+                                                top_tv.setText("Layer Info");
+                                                info_window_ll.setVisibility(View.VISIBLE);
+                                                div_ll.setVisibility(View.VISIBLE);
+//                                                cir_ll.setVisibility(View.VISIBLE);
+                                                div.setText(divn_name);
+//                                                circle_nm.setText(circle_name);
+                                                String areaSqkm = String.format("%.2f", Double.parseDouble(area_sq)/1000000);
+                                                area.setText(areaSqkm +" sq.km");
+
+                                                elephant_ll.setVisibility(View.GONE);
+                                                rng_ll.setVisibility(View.GONE);
+                                                section_ll.setVisibility(View.GONE);
+                                                beat_ll.setVisibility(View.GONE);
+
+                                            }
+                                        });
+
+                                        map.moveCamera(CameraUpdateFactory.newLatLng(layer_latlng));
+                                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(layer_latlng, 8.5f));
+                                        map.setMaxZoomPreference(30.0f);
+
+                                    }catch(Exception e) {
+                                        e.printStackTrace();
+                                        progress_bar_LL.setVisibility(View.GONE);
+                                    }
+
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                progress_bar_LL.setVisibility(View.GONE);
+                            }
+
+
+                        }else {
+                            Toast.makeText(ViewReportMapPointActivity.this, "Please try again !", Toast.LENGTH_SHORT).show();
+                            if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                                progress_bar_LL.setVisibility(View.GONE);
+                            }
+                            Log.i("Map_response",response.body().getPost().toString());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<MapDataResponse> call, Throwable t) {
+                        Toast.makeText(ViewReportMapPointActivity.this, "Please try again !", Toast.LENGTH_SHORT).show();
+                        if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                            progress_bar_LL.setVisibility(View.GONE);
+                        }
+                        Log.i("Map_response",call.toString());
+                    }
+                });
+
+            }else  if (type.equalsIgnoreCase("range")){
+
+                RangeRequestObj layerRequestObj = new RangeRequestObj(id);
+                String request = new Gson().toJson(layerRequestObj);
+
+                // Here the json data is add to a hash map with key data
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("data", request);
+                Log.i("Map_response",params.toString());
+
+                retrofitInterface.callMapApi(params,layerNm).enqueue(new Callback<MapDataResponse>() {
+                    @Override
+                    public void onResponse(Call<MapDataResponse> call, Response<MapDataResponse> response) {
+
+                        if (response.isSuccessful()){
+
+                            try{
+                                if (response.body().getPost()!=null){
+
+                                    for (int i=0;i<response.body().getPost().size();i++) {
+                                        rangeJsonResponse = new JSONObject(response.body().getPost().get(i).getGeojson());
+                                        area_sq=response.body().getPost().get(i).getArea();
+                                        range_name=response.body().getPost().get(i).getLayer_name();
+                                    }
+                                    //for putting GeoJsonLayer on Map with json response coming from geoserver
+                                    rangeLayer=new GeoJsonLayer(map,rangeJsonResponse);
+//                GeoJsonLayer layer=new GeoJsonLayer(map,R.raw.odisha_div,context);
+
+                                    callToGetLatLngRangeBoundary(rangeJsonResponse);
+
+                                    if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                                        progress_bar_LL.setVisibility(View.GONE);
+                                    }
+
+                                    GeoJsonPolygonStyle polyStyle =rangeLayer.getDefaultPolygonStyle();
+                                    polyStyle.setStrokeColor(getResources().getColor(R.color.range_boundary_color));
+                                    polyStyle.setFillColor(getResources().getColor(R.color.range_boundary_transparent));
+                                    polyStyle.setStrokeWidth(6);
+                                    rangeLayer.addLayerToMap();
+
+                                }
+
+                            }catch(Exception e) {
+                                if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                                    progress_bar_LL.setVisibility(View.GONE);
+                                }
+                                e.printStackTrace();
+                            }
+
+
+                        }else {
+                            Toast.makeText(ViewReportMapPointActivity.this, "Please try again !", Toast.LENGTH_SHORT).show();
+                            if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                                progress_bar_LL.setVisibility(View.GONE);
+                            }
+                            Log.i("Map_response",response.body().getPost().toString());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<MapDataResponse> call, Throwable t) {
+                        Toast.makeText(ViewReportMapPointActivity.this, "Please try again !", Toast.LENGTH_SHORT).show();
+                        if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                            progress_bar_LL.setVisibility(View.GONE);
+                        }
+                        Log.i("Map_response",call.toString());
+                    }
+                });
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                progress_bar_LL.setVisibility(View.GONE);
+            }            Log.i("Map_response",e.toString());
+        }
+    }
+
+    public void callToGetLatLngRangeBoundary(JSONObject geoJson){
+        try {
+            ArrayList<LatLng> listdata = new ArrayList<LatLng>();
+//            JSONArray feature_jsonArray = rangeJsonResponse.getJSONArray("features");
+//            JSONObject geometry_json=feature_jsonArray.getJSONObject(0).getJSONObject("geometry");
+
+            JSONArray coordinate_jsonArray = geoJson.getJSONArray("coordinates");
+
+            JSONArray first_jsonArray=null,second_jsonArr=null,third_jsonArr=null;
+            first_jsonArray=coordinate_jsonArray.getJSONArray(0);
+//            JSONObject properties_json=feature_jsonArray.getJSONObject(0).getJSONObject("properties");
+//            String name=properties_json.getString("divn_name");
+            try {
+//                circle_name = properties_json.getString("circle");
+//                divn_name = properties_json.getString("divn_name");
+//                range_name = properties_json.getString("name_e");
+//                area_sq = properties_json.getString("area");
+//                area_sq = properties_json.getString("area_sqkm");
+//                cir_ll.setVisibility(View.VISIBLE);
+                area_ll.setVisibility(View.VISIBLE);
+            }catch (Exception e){
+//                divn_name = properties_json.getString("division");
+//                range_name = properties_json.getString("name_e");
+                area_ll.setVisibility(View.GONE);
+                e.printStackTrace();
+            }
+            second_jsonArr = first_jsonArray.getJSONArray(0);
+
+            for (int j = 0; j < second_jsonArr.length(); j++) {
+                third_jsonArr = second_jsonArr.getJSONArray(j);
+                String[] coord = third_jsonArr.toString().split(",");
+                double x = Double.parseDouble(coord[0].replace("[",""));
+                double y = Double.parseDouble(coord[1].replace("]",""));
+                listdata.add(new LatLng(y,x));
+                range_layer_latlng=new LatLng(y,x);//(latitude,longitude)- It will zoom by taking to this latlng
+            }
+            if (progress_bar_LL.getVisibility()==View.VISIBLE){
+                progress_bar_LL.setVisibility(View.GONE);
+            }
+
+            info_window_ll.setVisibility(View.GONE);
+            rangeLayer.setOnFeatureClickListener(new GeoJsonLayer.GeoJsonOnFeatureClickListener() {
+                @Override
+                public void onFeatureClick(GeoJsonFeature geoJsonFeature) {
+                    info_window_ll.setVisibility(View.VISIBLE);
+
+                    top_tv.setText("Layer Info");
+                    div_ll.setVisibility(View.VISIBLE);
+                    rng_ll.setVisibility(View.VISIBLE);
+//                    cir_ll.setVisibility(View.VISIBLE);
+//                    circle_nm.setText(circle_name);
+                    div.setText(divn_name);
+                    rng.setText(range_name);
+                    String areaSqkm = String.format("%.2f", Double.parseDouble(area_sq)/1000000);
+                    area.setText(areaSqkm +" sq.km");
+
+                    elephant_ll.setVisibility(View.GONE);
+                    section_ll.setVisibility(View.GONE);
+                    beat_ll.setVisibility(View.GONE);
+                }
+            });
+
+
+            map.moveCamera(CameraUpdateFactory.newLatLng(range_layer_latlng));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(range_layer_latlng, 10));
+            map.setMaxZoomPreference(30.0f);
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
 
 }

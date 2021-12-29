@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iwlms-new-layer-android.iml" filepath="$PROJECT_DIR$/.idea/modules/iwlms-new-layer-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/iwlms-new-layer-android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/iwlms-new-layer-android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easy_csv/iwlms-new-layer-android.easy_csv.iml" filepath="$PROJECT_DIR$/.idea/modules/easy_csv/iwlms-new-layer-android.easy_csv.iml" />
+    </modules>
+  </component>
+</project>

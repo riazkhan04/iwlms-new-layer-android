@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.cdflynn:checkview:v1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fcc0d037975db44676d23e248043583e/transformed/jetified-checkview-v1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fcc0d037975db44676d23e248043583e/transformed/jetified-checkview-v1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fcc0d037975db44676d23e248043583e/transformed/jetified-checkview-v1.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
