@@ -108,7 +108,7 @@ public class SplashScreen extends AppCompatActivity implements SplashContract.vi
     public static final String BEAT_DIVISION_ID = "Division_Id";
     public static final String BEAT_RANGE_ID = "Range_ID";
     public static final String BEAT_SECTION_ID = "Section_ID";
-    //    PhoneCustomSignalStateListener signalStateListener;
+//    PhoneCustomSignalStateListener signalStateListener;
 //    TelephonyManager mTelephonyManager;
     public static int signal_strength=0;
     Handler network_handler;
@@ -154,30 +154,30 @@ public class SplashScreen extends AppCompatActivity implements SplashContract.vi
         super.onCreate(savedInstanceState);
         try {
 
-            this.overridePendingTransition(R.anim.left_to_right_anim,
-                    R.anim.left_to_right_anim);
-            setContentView(R.layout.activity_splash_screen);
+        this.overridePendingTransition(R.anim.left_to_right_anim,
+                R.anim.left_to_right_anim);
+        setContentView(R.layout.activity_splash_screen);
 
-            //For unique no
+        //For unique no
 //        try {
 //            String m_androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 //            Log.i("android_id",m_androidId);
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
-            databaseScreening();
-            initData();
+        databaseScreening();
+        initData();
 
-            yourListOfImages.add(0, R.drawable.splashscreen);
-            yourListOfImages.add(1, R.drawable.splashscreenn);
-            yourListOfImages.add(2, R.drawable.splashscreennn);
+        yourListOfImages.add(0, R.drawable.splashscreen);
+        yourListOfImages.add(1, R.drawable.splashscreenn);
+        yourListOfImages.add(2, R.drawable.splashscreennn);
 
-            Random random = new Random(System.currentTimeMillis());
-            int position_img = random.nextInt(yourListOfImages.size());
+        Random random = new Random(System.currentTimeMillis());
+        int position_img = random.nextInt(yourListOfImages.size());
 
-            Glide.with(SplashScreen.this)
-                    .load(yourListOfImages.get(position_img))
-                    .into(imageView);
+        Glide.with(SplashScreen.this)
+                .load(yourListOfImages.get(position_img))
+                .into(imageView);
 
 //        presenter.loadSplash();
 
@@ -221,16 +221,16 @@ public class SplashScreen extends AppCompatActivity implements SplashContract.vi
 
     public void initData() {
         try {
-            progress_bar = findViewById(R.id.progress_bar);
+        progress_bar = findViewById(R.id.progress_bar);
 
-            odisha_txt = findViewById(R.id.odisha_txt);
-            wildlife_txt = findViewById(R.id.wildlife_txt);
-            logo_img = findViewById(R.id.logo_img);
-            imageView = findViewById(R.id.imageView);
-            text_layout = findViewById(R.id.text_layout);
-            main_cl = findViewById(R.id.main_cl);
-            commonMethods=new CommonMethods(SplashScreen.this);
-            session=new SessionManager(SplashScreen.this);
+        odisha_txt = findViewById(R.id.odisha_txt);
+        wildlife_txt = findViewById(R.id.wildlife_txt);
+        logo_img = findViewById(R.id.logo_img);
+        imageView = findViewById(R.id.imageView);
+        text_layout = findViewById(R.id.text_layout);
+        main_cl = findViewById(R.id.main_cl);
+        commonMethods=new CommonMethods(SplashScreen.this);
+        session=new SessionManager(SplashScreen.this);
 
         }catch (Exception e){
             e.printStackTrace();
@@ -291,27 +291,27 @@ public class SplashScreen extends AppCompatActivity implements SplashContract.vi
 
 
     public void showForceUpdateDialog() {
-        try {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(new ContextThemeWrapper(SplashScreen.this, R.style.AlertDialogCustom));
+     try {
+         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(new ContextThemeWrapper(SplashScreen.this, R.style.AlertDialogCustom));
 
-            alertDialogBuilder.setTitle("Force Update");
-            alertDialogBuilder.setMessage("A new update is available in playstore.Please update !");
-            alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
-                    dialog.cancel();
-                }
-            });
+         alertDialogBuilder.setTitle("Force Update");
+         alertDialogBuilder.setMessage("A new update is available in playstore.Please update !");
+         alertDialogBuilder.setCancelable(false);
+         alertDialogBuilder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+             public void onClick(DialogInterface dialog, int id) {
+                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
+                 dialog.cancel();
+             }
+         });
 
-            alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int i) {
-                    dialog.cancel();
-                    finish();
-                }
-            });
-            alertDialogBuilder.show();
+         alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int i) {
+                 dialog.cancel();
+                 finish();
+             }
+         });
+         alertDialogBuilder.show();
 
         }catch (Exception e){
             e.printStackTrace();

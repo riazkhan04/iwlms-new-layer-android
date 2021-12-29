@@ -70,7 +70,7 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
     LinearLayout progress_bar_LL;
     String divn_name="",area_sq="",range_name="",circle_name;
     LatLng latLng=null,layer_latlng=null,range_layer_latlng=null;
-    //    public String map_url="http://14.98.253.214:8087";//old geoserver link
+//    public String map_url="http://14.98.253.214:8087";//old geoserver link
     public String map_url="http://164.164.122.69:8080";//geoserver link
 
 
@@ -163,7 +163,7 @@ public class ViewReportMapPointActivity extends AppCompatActivity implements OnM
                 }
             });
 
-            info_window_ll.setOnClickListener(new View.OnClickListener() {
+             info_window_ll.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     info_window_ll.setVisibility(View.GONE);
