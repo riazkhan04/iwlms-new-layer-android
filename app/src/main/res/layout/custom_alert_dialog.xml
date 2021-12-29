@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="15dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Warning"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gradient_bg"/>
+
+    <ImageView
+        android:id="@+id/close_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="4dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_cancel"
+        android:layout_alignParentRight="true"
+        app:tint="@color/white" />
+
+
+    <TextView
+        android:id="@+id/textMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/location_automatic_manual_txt"
+        android:textSize="15sp"
+        android:textColor="@color/textDark"
+        android:gravity="center"
+        android:layout_below="@id/title"/>
+
+    <LinearLayout
+        android:id="@+id/btn_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:layout_below="@id/textMsg"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/automatic_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/automatic"
+            android:layout_weight="1"
+            android:textColor="@color/textDark"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/main_progress_ll"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/btn_round_bg"/>
+
+        <Button
+            android:id="@+id/manual_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/manual"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/main_progress_ll"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_progress_ll"
+            android:backgroundTint="@color/text"
+            android:background="@drawable/btn_round_bg"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

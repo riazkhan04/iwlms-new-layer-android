@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hindi">ହିନ୍ଦୀ</string>
+    <string name="odia">ଓଡ଼ିଆ</string>
+    <string name="english">ଇଂରାଜୀ </string>
+    <string name="select_name">ନାମ </string>
+    <string name="phone_no">ଫୋନ୍ ନଂ</string>
+    <string name="gender_txt">ଲିଙ୍ଗ</string>
+    <string name="male">ପୁରୁଷ</string>
+    <string name="female">ମହିଳା</string>
+    <string name="other">ଅନ୍ୟ</string>
+    <string name="age">ବୟସ</string>
+    <string name="year">ବର୍ଷ</string>
+    <string name="submit_txt">ଦାଖଲ କର</string>
+    <string name="division_select">ବିଭାଜନ ଚୟନ କରନ୍ତୁ</string>
+    <string name="range_select">ପରିସର ଚୟନ କରନ୍ତୁୁ</string>
+    <string name="section_select">ବିଭାଗ ଚୟନ କରନ୍ତୁ</string>
+    <string name="beat_select">ବିଟ୍ ଚୟନ କରନ୍ତୁ</string>
+    <string name="ok">ଠିକ୍</string>
+    <string name="choose_file">ପ୍ରତିଛବି ବାର୍ତ୍ତା </string>
+    <string name="voice_msg">ସ୍ୱର ବାର୍ତ୍ତା</string>
+    <string name="text_msg">ପାଠ୍ୟ ବାର୍ତ୍ତା </string>
+    <string name="video_msg">ଭିଡିଓ ବାର୍ତ୍ତା</string>
+    <string name="view_report">ରିପୋର୍ଟ ଦେଖନ୍ତୁ</string>
+    <string name="sync_txt">ରିପୋର୍ଟ ସିଙ୍କ କରନ୍ତୁ</string>
+    <string name="all_saved_report">ସମସ୍ତ ସଞ୍ଚିତ ରିପୋର୍ଟ</string>
+    <string name="record_a_message">ଏକ ବାର୍ତ୍ତା ରେକର୍ଡ କରନ୍ତୁ</string>
+    <string name="submit">ଦାଖଲ କରନ୍ତୁ</string>
+    <string name="record">ରେକର୍ଡ</string>
+    <string name="stop">ବନ୍ଦ କର</string>
+    <string name="play">ଚଲାନ୍ତୁ</string>
+    <string name="enter_something">କିଛି ପ୍ରବେଶ କର ...</string>
+    <string name="heading_towards">ଗାଁର ନାମ /ହାତୀ କେଉଁ ଆଡକୁ ଗତି କରୁଛି</string>
+    <string name="write_a_message">ଏକ ବାର୍ତ୍ତା ଲେଖନ୍ତୁ</string>
+    <string name="capture_photo">ଏକ ଫଟୋ କ୍ୟାପଚର କରନ୍ତୁୁ</string>
+    <string name="data_to_sync">ସିଙ୍କ୍ କରିବାକୁ ଡାଟା</string>
+    <string name="click_to_take_photo">ଫଟୋ ଉଠାଇବାକୁ କ୍ଲିକ୍ କରନ୍ତୁ</string>
+    <string name="viewReport">ରିପୋର୍ଟ ଦେଖନ୍ତୁ</string>
+    <string name="save_report">ଆପଣ ରିପୋର୍ଟ ସଞ୍ଚୟ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?</string>
+    <string name="save_before_send">ସେଭ୍ କରିବା ପୂର୍ବରୁ ଦୟାକରି ଆପଣଙ୍କର ତଥ୍ୟ ଯାଞ୍ଚ କରନ୍ତୁ ?</string>
+    <string name="warning">ଚେତାବନୀ</string>
+    <string name="yes">ହଁ</string>
+    <string name="no">ନା</string>
+    <string name="save">ସଞ୍ଚୟ କରନ୍ତୁ</string>
+    <string name="cancel">ବାତିଲ୍ କରନ୍ତୁ</string>
+    <string name="capture_image_toast">ଦୟାକରି ପ୍ରତିଛବି କ୍ୟାପଚର କରନ୍ତୁ!</string>
+    <string name="text_msg_toast">ଯଦି କିଛି ଅଛି ଦୟାକରି କିଛି ସନ୍ଦେଶ ପ୍ରବେଶ କରନ୍ତୁ!</string>
+    <string name="video_msg_toast">ଦୟାକରି ଭିଡିଓ ଚୟନ କରନ୍ତୁ!</string>
+    <string name="voice_msg_toast">ଆଗକୁ ଯିବାକୁ ଦୟାକରି ସ୍ୱର ରେକର୍ଡ କରନ୍ତୁ!</string>
+    <string name="exit_msg">ଆପଣ ନିଶ୍ଚିତ କି ଆପଣ ବାହାରକୁ ଯିବାକୁ ଚାହୁଁଛନ୍ତି?</string>
+    <string name="saved_successfully">ତଥ୍ୟ ସଫଳତାର ସହିତ ସଞ୍ଚୟ ହେଲା</string>
+    <string name="no_data_to_sync">ସିଙ୍କ କରିବାକୁ କ ଣସି ତଥ୍ୟ ନାହିଁ</string>
+    <string name="pending_to_sync">ସିଙ୍କ କରିବାକୁ ବିଚାରାଧୀନ ଅଛି</string>
+    <string name="do_you_realy_want_to_sync">ଆପଣ ପ୍ରକୃତରେ ସିଙ୍କ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?</string>
+    <string name="location_automatic_manual_txt">ଆପଣ ସ୍ୱୟଂଚାଳିତ ଭାବରେ କିମ୍ବା ମାନୁଆଲରେ ଆପଣଙ୍କର ଅବସ୍ଥାନ ନେବାକୁ ଚାହୁଁଛନ୍ତି କି?</string>
+    <string name="automatic">ସ୍ୱୟଂଚାଳିତ</string>
+    <string name="manual">ନିଜେ ଚାହାଁନ୍ତି</string>
+    <string name="profile">ପ୍ରୋଫାଇଲ୍</string>
+    <string name="logout">ପ୍ରସ୍ଥାନ କର</string>
+    <string name="logout_msg">ଆପଣ ଆପ୍ ଲଗ୍ ଆଉଟ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?</string>
+    <string name="username">ଉପଯୋଗକର୍ତ୍ତା ନାମ  :</string>
+    <string name="mobile">ମୋବାଇଲ୍  :</string>
+    <string name="division">ବିଭାଜନ   :</string>
+    <string name="range">ପରିସର   :</string>
+    <string name="section">ବିଭାଗ   :</string>
+    <string name="beat">ବିଟ୍   :</string>
+    <string name="edit_image">ପ୍ରତିଛବି ସଂପାଦନ କରନ୍ତୁ</string>
+    <string name="already_syncing_report">ପୂର୍ବରୁ ରିପୋର୍ଟଗୁଡିକ ସିଙ୍କ୍ କରୁଛି | ଦୟାକରି ଅପେକ୍ଷା କର...</string>
+    <string name="saved_report_sent_to_server">ସର୍ଭରକୁ ପଠାଯାଇଥିବା ସଞ୍ଚିତ ରିପୋର୍ଟ | ଦୟାକରି ଅପେକ୍ଷା କର ...</string>
+    <string name="success_sent_to_server">ସର୍ଭରକୁ ସଫଳତାପୂର୍ବକ ପ୍ରେରିତ ରିପୋର୍ଟ</string>
+
+
+</resources>

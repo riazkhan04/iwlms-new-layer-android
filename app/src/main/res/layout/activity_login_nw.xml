@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_sv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_bg_nw"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/iwlms_logo"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_til"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="70dp"
+        android:elevation="7dp"
+        android:focusableInTouchMode="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_img"
+        app:startIconDrawable="@drawable/user_login"
+        app:startIconTint="@color/colorPrimary"
+        android:gravity="left|center"
+        android:textColorHint="@color/textDark"
+        app:hintTextColor="@color/black"
+        android:hint="Username">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/UserName"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/cursor_drawable"
+        android:drawablePadding="5dp"
+        android:background="@drawable/login_btn_drawable"
+        android:textColorHint="@color/textDark"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="18dp"
+        />
+</com.google.android.material.textfield.TextInputLayout>
+<!--
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"    to remove side line of edittext -->
+
+<!--    android:background="@android:color/transparent"   for remove of underline-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_til"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="left|center"
+        android:elevation="7dp"
+        android:focusableInTouchMode="true"
+        app:startIconDrawable="@drawable/password_login"
+        app:startIconTint="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_til"
+        app:hintTextColor="@color/black"
+        android:textColorHint="@color/textDark"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/textDark"
+        android:hint="Password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@drawable/cursor_drawable"
+            android:drawablePadding="5dp"
+            android:background="@drawable/login_btn_drawable"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="18dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Login"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_til"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/box2"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        android:indeterminateTint="@color/white"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        />
+
+    <LinearLayout
+        android:id="@+id/odia_english_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/odia_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rect_box_white_bg"
+            android:text="Odia"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/english_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rect_box_white_bg"
+            android:text="English"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

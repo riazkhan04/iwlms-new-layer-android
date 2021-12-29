@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_ll"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include android:id="@+id/toolbar_new_id"
+        layout="@layout/toolbar_new"/>
+
+    <!--ScrollView removed and add LinearLayout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="false"
+        android:fillViewport="true"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/main_monitoring"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/linear2"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:elevation="10dp"
+        app:labelVisibilityMode="labeled"
+        android:layout_gravity="bottom"
+        app:itemIconSize="20sp"
+        app:itemBackground="@drawable/bottom_item_selector"
+        android:background="@drawable/gradient_back"
+        style="@style/bottomNavigationTheme"
+        app:itemRippleColor="@color/text"
+        app:itemIconTint="@color/off_white"
+        app:itemTextColor="@color/off_white"
+        app:menu="@menu/dashboard_monitoring_menu"
+        app:hideOnScroll="true"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior" />
+<!--        android:background="@drawable/rect_box_white_bg"-->
+
+</LinearLayout>

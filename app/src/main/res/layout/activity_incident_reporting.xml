@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear2"
+        android:background="@drawable/common_screen"
+        android:scaleType="fitXY" />
+
+    <include
+        android:id="@+id/toolbar_id"
+        layout="@layout/top_toolbar"
+        />
+
+    <ScrollView
+        android:id="@+id/main_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_id"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_calender"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="2dp"
+                android:hint="Select date">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dateof"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_calender"
+                    android:drawableTint="@color/textDark"
+                    android:textSize="13sp"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="8dp"
+                    android:hint="Select date"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/editrectangle"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Location (Village, RF, PRF, etc)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/locationname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_location"
+                    android:drawableTint="@color/textDark"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:textSize="13sp"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_time"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="From Time">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/from_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_time"
+                        android:drawableTint="@color/textDark"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint="From Time"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_time"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="To Time">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/to_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_time"
+                        android:drawableTint="@color/textDark"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint="To Time"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <!--Division layout start-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:background="@drawable/editrectangle"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:hint="To Time">-->
+
+<!--                <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                    android:id="@+id/division"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:autofillHints="Select Division"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="-15dp"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:paddingRight="5dp"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="13dp"-->
+<!--                    android:drawableRight="@drawable/ic_arrow_back"-->
+<!--                    android:drawableTint="@color/textDark"-->
+<!--                    android:layout_gravity="center"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:background="@drawable/editrectangle"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:hint="Select Range">-->
+
+<!--                <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                    android:id="@+id/range"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:autofillHints="Select Range"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="-15dp"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:paddingRight="5dp"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="13dp"-->
+<!--                    android:drawableRight="@drawable/ic_arrow_back"-->
+<!--                    android:drawableTint="@color/textDark"-->
+<!--                    android:layout_gravity="center"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:background="@drawable/editrectangle"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:hint="Select Section">-->
+
+<!--                <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                    android:id="@+id/section"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:autofillHints="Select Section"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="-15dp"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:paddingRight="5dp"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="13dp"-->
+<!--                    android:drawableRight="@drawable/ic_arrow_back"-->
+<!--                    android:drawableTint="@color/textDark"-->
+<!--                    android:layout_gravity="center"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:background="@drawable/editrectangle"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:hint="Select Beat">-->
+
+<!--                <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                    android:id="@+id/beat"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:autofillHints="Select Beat"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="-15dp"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:paddingRight="5dp"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="13dp"-->
+<!--                    android:drawableRight="@drawable/ic_arrow_back"-->
+<!--                    android:drawableTint="@color/textDark"-->
+<!--                    android:layout_gravity="center"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            visible gone -->
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/division"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                android:background="@drawable/editrectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/range"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                android:background="@drawable/editrectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/section"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                android:background="@drawable/editrectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/beat"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                android:background="@drawable/editrectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+
+            <!-- Incident Report type spinner start-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/editrectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Incident Type">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/incidentType_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Select Reporting"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="-10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:entries="@array/incident_type_arr"
+                    android:drawableRight="@drawable/ic_arrow_back"
+                    android:drawableTint="@color/textDark"
+                    android:layout_gravity="center"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/incident_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+
+            <!--       Incident_type  -> sub-type -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/incident_sub_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:hint="Incident Sub Type">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/incidentsubType_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="Select indicident sub type"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="-12dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:entries="@array/damage_through_elephant_arr"
+                        android:drawableRight="@drawable/ic_arrow_back"
+                        android:drawableTint="@color/textDark"
+                        android:layout_gravity="center"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Remark type spinner start-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/death_til"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/editrectangle"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Death">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/death_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:digits="0123456789"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+<!--            For dynamic check boxes layout-->
+        <LinearLayout
+            android:id="@+id/checkbox_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:layoutAnimation="@anim/layout_item_animation"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_round_bg"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/incident_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"/>
+
+
+            <LinearLayout
+                android:id="@+id/extra_animal_death_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/layout_item_animation"
+                android:visibility="gone"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Animal Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/animal_nm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:textSize="13sp"
+                        android:maxLength="40"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Death">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_death_animal_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:maxLength="8"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Total No.">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/noofelephants"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/elephant_img"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:maxLength="8"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Herd">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/herd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/elephant_img"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:maxLength="8"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Tusker">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tusker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/elephant_img"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:textSize="13sp"
+                        android:maxLength="8"
+                        android:digits="0123456789"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Makhna">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/male"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/elephant_img"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:digits="0123456789"
+                        android:maxLength="8"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Female">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/female"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/elephant_img"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:maxLength="8"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Calf">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/calf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/elephant_img"
+                        android:drawableTint="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="13sp"
+                        android:maxLength="8"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <!--Latitude layout-->
+
+            <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/reason_death_til"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_location"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:hintTextColor="@color/grey"
+                android:hint="Reason of death">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/death_reason_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="-8dp"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:textSize="13sp"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/death_reason_til"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/editrectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Death Reason Type">
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/death_reason_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Select Reporting"
+                android:gravity="center_vertical"
+                android:layout_marginTop="-10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:entries="@array/death_type_arr"
+                android:drawableRight="@drawable/ic_arrow_back"
+                android:drawableTint="@color/textDark"
+                android:layout_gravity="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_location"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Remark if any">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="-8dp"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:textSize="13sp"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relat"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:text="Latitude(N) :"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/latdeg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:textColor="@color/textDark"
+                        android:enabled="false"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/latmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:textColor="@color/textDark"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:enabled="false"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/latsec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textDark"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <!--Longitude layout-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relat"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:text="Longitude(E) :"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/londeg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:textColor="@color/textDark"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lonmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:textColor="@color/textDark"
+                        android:enabled="false"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lonsec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:digits="0123456789"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:textColor="@color/textDark"
+                        android:enabled="false"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relat"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:text="Altitude :"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relat"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:text="Accuracy :"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/altitude_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:textColor="@color/textDark"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editrectangle"
+                    app:endIconDrawable="@drawable/ic_location"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/accuracy_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:textColor="@color/textDark"
+                        android:textSize="13sp"
+                        android:paddingRight="5dp"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:hint=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relat"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:text="Add Image *"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+
+            <ImageView
+                android:id="@+id/camera_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="80dp"
+                android:src="@drawable/ic_menu_camera"/>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:elevation="8dp"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

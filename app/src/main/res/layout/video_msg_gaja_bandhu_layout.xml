@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/common_screen">
+
+    <include android:id="@+id/toolbar_new_id"
+        layout="@layout/toolbar_new"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/main_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:background="@drawable/common_screen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/heading_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="17sp"
+            android:padding="5dp"
+            android:text="@string/record_a_message"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/record_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading_txt">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recordCV"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/stop_img"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_play"
+                        app:tint="@color/light_grey" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/record"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/video_imageLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lng_ll"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/close_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="4dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_cancel"
+                android:layout_gravity="right"/>
+
+            <ImageView
+                android:id="@+id/imgShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+
+            <VideoView
+                android:id="@+id/vidShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/play_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:src="@drawable/ic_play"
+                android:scaleType="centerCrop"
+                app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/pause_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_pause"
+                    android:scaleType="centerCrop"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+        <EditText
+            android:id="@+id/extra_txt_edit"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:hint="@string/enter_something"
+            android:textSize="16sp"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:background="@drawable/login_btn_drawable"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/record_ll"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:id="@+id/heading_towards"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:hint="@string/heading_towards"
+            android:textSize="16sp"
+            android:inputType="text"
+            android:background="@drawable/editrectangle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/extra_txt_edit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+
+        <!--Latitude layout-->
+        <TextView
+            android:id="@+id/lat_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading_towards"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:text="Latitude(N) :"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:id="@+id/lat_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lat_txt"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_location"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/latdeg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:textColor="@color/textDark"
+                    android:enabled="false"
+                    android:textSize="13sp"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+                    android:hint=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_location"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/latmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:digits="0123456789"
+                    android:textColor="@color/textDark"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:enabled="false"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+                    android:hint=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/editrectangle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/latsec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textDark"
+                    android:textSize="13sp"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:background="@android:color/transparent"
+                    android:enabled="false"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+                    android:hint=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <!--Longitude layout-->
+        <TextView
+            android:id="@+id/lng_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lat_ll"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:text="Longitude(E) :"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:id="@+id/lng_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lng_txt"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_location"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/londeg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:background="@android:color/transparent"
+                    android:enabled="false"
+                    android:textColor="@color/textDark"
+                    android:textSize="13sp"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+                    android:hint=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/editrectangle"
+                app:endIconDrawable="@drawable/ic_location"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lonmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:digits="0123456789"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:textColor="@color/textDark"
+                    android:enabled="false"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+                    android:hint=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/editrectangle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lonsec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:digits="0123456789"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:textColor="@color/textDark"
+                    android:enabled="false"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+                    android:hint=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+    <TextView
+        android:id="@+id/submit_txt"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        android:text="@string/submit"/>
+
+
+</LinearLayout>

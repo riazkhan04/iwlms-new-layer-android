@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/first"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_home"
+            android:iconTint="@color/textDark"/>
+    </group>
+    <group
+        android:id="@+id/second"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_update_local_data"
+            android:title="Update Data"
+            android:icon="@drawable/ic_sync"
+            android:iconTint="@color/textDark" />
+    </group>
+    <group
+        android:id="@+id/third"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_outbox"
+            android:title="View Elephant Report"
+            android:icon="@drawable/ic_report"
+            android:iconTint="@color/textDark" />
+    </group>
+
+    <group
+        android:id="@+id/sixth"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout"
+            android:icon="@drawable/ic_logout"
+            android:iconTint="@color/textDark" />
+    </group>
+
+    <group
+        android:id="@+id/seven"
+        android:checkableBehavior="single"></group>
+
+</menu>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.orsac.android.pccfwildlife">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+
+        <activity
+            android:name=".Activities.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashViewTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.LoginActivityNewGajaBandhu"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.DashboardActivity"
+            tools:strict="Default" />
+
+        <activity
+            android:name=".Activities.Dashboard_nw"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme"
+            tools:strict="Default" > <!-- <activity android:name=".Activities.MainActivity"/> -->
+        <intent-filter>
+            <action android:name="android.intent.action.SEND" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:mimeType="application/*" />
+        </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.ElephantReport"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.NilReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.IndirectReporting"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.UpdateElephantReport"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.UpdateIndirectReport"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.ElephantDeathIncidentReportingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.OtherIncidentReporting"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.SelectionPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.DashboardMonitoringActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ViewReportMapPointActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme"/>
+
+        <activity
+            android:name=".Activities.SupportHelpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.IncidentReportViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.ViewOwnReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.RegisterGajaBandhuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".CameraClass.WhatsappCameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".CameraClass.PhotoVideoRedirectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.ProfileGajaBandhuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.GajaBandhuItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.VideoMessageGajaBandhuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".Activities.GajaBandhuActivities.VoiceMessageGajaBandhuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.ImageMessageGajaBandhuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.TextMessageGajaBandhuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+        <activity
+            android:name=".Activities.GajaBandhuActivities.GajaBandhuViewReport"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+<!--        <activity-->
+<!--            android:name=".Services.UpdatingAreaActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/MyAppTheme" />-->
+
+        <activity
+            android:name=".Activities.VulnerableElephantDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme" />
+
+
+
+        <service android:name=".Services.RecordingService"
+            android:enabled="true"
+            android:exported="false"
+            />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB-VJ5Dc0Wf-AzmvNlwd48GuzwBN25s8JQ" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".Services.NotificationCancelReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.maps.v2.API_KEY" -->
+        <!-- android:value="AIzaSyDKymeBXNeiFWY5jRUejv6zItpmr2MVyQ0" /> -->
+        <service
+            android:name=".Services.MyService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.camera.front"/>
+    <uses-feature android:name="android.hardware.microphone"/>
+<!--    <uses-feature android:name="android.hardware.camera2"/>-->
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.flash"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission" />
+
+</manifest>

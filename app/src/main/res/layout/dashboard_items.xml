@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/elephreport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_gravity="center"
+        android:foreground="@drawable/ripple_effect"
+        android:background="@drawable/rect_box_white_bg"
+        app:cardElevation="@dimen/card_elevation"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="10dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:src="@drawable/reporting_direct_img"/>
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:textSize="16sp"
+                android:layout_margin="5dp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:text="@string/elephant_report"/>
+
+            <TextView
+                android:id="@+id/sync_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="left|center"
+                android:textSize="13sp"
+                android:layout_margin="5dp"
+                android:textColor="@color/textDark"
+                android:text="To be synced-100"/>
+
+
+            <ImageView
+                android:id="@+id/elephant_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="-10dp"
+                android:layout_gravity="bottom|center"
+                android:src="@drawable/reporting_elephant_img"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/reporting_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/direct_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:focusable="false"
+        android:foreground="@drawable/ripple_effect"
+        android:background="@drawable/rect_box_white_bg"
+        app:cardElevation="@dimen/card_elevation"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        android:padding="5dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/direct_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:src="@drawable/reporting_direct_img"/>
+
+            <TextView
+                android:id="@+id/direct_report_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_margin="5dp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:text="Direct \n Reporting"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/nil_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:foreground="@drawable/ripple_effect"
+            android:background="@drawable/rect_box_white_bg"
+            app:cardElevation="@dimen/card_elevation"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="10dp"
+            android:padding="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/nil_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:src="@drawable/reporting_nil"/>
+
+                <TextView
+                    android:id="@+id/nil_report_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textDark"
+                    android:textStyle="bold"
+                    android:text="Nil \n Reporting"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/indirect_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:foreground="@drawable/ripple_effect"
+            android:background="@drawable/rect_box_white_bg"
+            app:cardElevation="@dimen/card_elevation"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="10dp"
+            android:padding="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/indirect_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:src="@drawable/reporting_indirect"/>
+
+                <TextView
+                    android:id="@+id/indirect_report_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textDark"
+                    android:textStyle="bold"
+                    android:text="Indirect \n Reporting"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/elephant_death_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false"
+            android:foreground="@drawable/ripple_effect"
+            android:background="@drawable/rect_box_white_bg"
+            app:cardElevation="@dimen/card_elevation"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="10dp"
+            android:padding="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/elephant_death_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:src="@drawable/elephant_death_incident"/>
+
+                <TextView
+                    android:id="@+id/elephant_death_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textDark"
+                    android:textStyle="bold"
+                    android:text="Elephant Death \n Incident"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/other_incident_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false"
+            android:foreground="@drawable/ripple_effect"
+            android:background="@drawable/rect_box_white_bg"
+            app:cardElevation="@dimen/card_elevation"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="10dp"
+            android:padding="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:src="@drawable/other_incident"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textDark"
+                    android:textStyle="bold"
+                    android:text="Other \n Incident"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

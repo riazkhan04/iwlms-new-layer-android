@@ -1,0 +1,199 @@
+<resources>
+    <string name="app_name">Wildlife Odisha</string>
+    <string name="title_activity_dash_board">DashBoard</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <color name="transparent">#00000000</color>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="elephant_report">Direct Report</string>
+    <string name="nil_report">Nil Report</string>
+    <string name="indirect_report">Indirect Reporting</string>
+    <string name="incident_report">Incident Reporting</string>
+    <string name="fire_report">Incident Reporting</string>
+<!--    <string name="fire_report">Other Incident Reporting</string>-->
+    <string name="sync">Sync</string>
+    <string name="report_data_txt">Elephant Sighting Count : </string>
+    <string name="incident_data_txt">Incident Report Count : </string>
+    <string name="vulnerable_data_txt">Vulnerable Elephant Count : </string>
+    <string name="animal_death_txt">Incident Report Chart : </string>
+    <string name="elephant_death_txt">Elephant Death Chart : </string>
+    <string name="iwlms_initiative">IWLMS initiative </string>
+    <string name="file_limit_size_upload_format">Files must be less than %sMB </string>
+
+    <string name="division_txt"><b>Division : </b></string>
+    <string name="range_txt"><b>Range : </b></string>
+    <string name="section_txt"><b>Section : </b></string>
+    <string name="beat_txt"><b>Beat : </b></string>
+
+    <string name="no_internet_txt">Please check your internet connection \n it look like you are not connected to \n the internet.</string>
+
+    <string-array name="incident_type_arr">
+        <item>Select Incident Type</item>
+<!--        <item>Damage Through Elephant</item>-->
+        <item>Elephant Death</item>
+    </string-array>
+
+    <string-array name="death_type_arr">
+        <item>Select death reason</item>
+        <!--        <item>Damage Through Elephant</item>-->
+        <item>Electrocution</item>
+        <item>Road Accident</item>
+        <item>Rail Accident</item>
+        <item>Drowning</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="incident_other_type_arr">
+        <item>Select Incident Type</item>
+        <item>Elephant on Road</item>
+        <item>Elephant Found In Pit/Dug Well</item>
+        <item>Elephant Injured/Sick</item>
+        <item>Cattle/Domestic Animal Kill</item>
+        <item>House Damage</item>
+        <item>Human Injury/Kill</item>
+        <item>Crop Damage</item>
+        <item>Others</item>
+
+<!--        <item>Animal Casualty</item>-->
+<!--        <item>Crop Damage</item>-->
+    </string-array>
+
+    <string-array name="direct_indrect_arr">
+        <item>Select Report</item>
+        <item>Direct </item>
+        <item>Indirect </item>
+        <item>Nil </item>
+<!--        <item>Nill </item>-->
+    </string-array>
+
+    <string-array name="year_arr">
+        <item>Select Year</item>
+        <item>2018 </item>
+        <item>2019 </item>
+        <item>2020 </item>
+    </string-array>
+
+    <string-array name="month_arr">
+        <item>Select Month</item>
+        <item>January </item>
+        <item>February </item>
+        <item>March </item>
+        <item>April </item>
+        <item>May </item>
+        <item>June </item>
+        <item>July </item>
+        <item>August </item>
+        <item>September </item>
+        <item>October </item>
+        <item>November </item>
+        <item>December </item>
+    </string-array>
+
+    <string-array name="issue_arr">
+        <item>Select issue</item>
+        <item>Reporting is not working </item>
+        <item>Monitoring is not working </item>
+        <item>Others </item>
+    </string-array>
+
+
+    <string-array name="damage_through_elephant_arr">
+        <item>Select Incident</item>
+        <item>Human Kill</item>
+        <item>Human injury</item>
+        <item>Crop Damage (acres)</item>
+        <item>House Damage</item>
+        <item>Cattle Kill</item>
+    </string-array>
+    <string-array name="animal_death_arr">
+        <item>Select Animal</item>
+        <item>Ox</item>
+        <item>Lion</item>
+        <item>Tiger</item>
+        <item>Horse</item>
+    </string-array>
+    <string-array name="elephant_death_arr">
+        <item>Select Elephant Gender</item>
+        <item>Makhna</item>
+        <item>Female</item>
+        <item>Calf</item>
+    </string-array>
+
+    <string name="alphanumeric">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_@!$</string>
+    <string name="password_hint">* password must be min 8 to max 15 characters. You can use alphanumeric and special character like -_@!$ </string>
+    <string name="hindi">Hindi</string>
+    <string name="odia">ଓଡ଼ିଆ</string>
+    <string name="english">English</string>
+    <string name="select_name">Name</string>
+    <string name="phone_no">Phone no</string>
+    <string name="gender_txt">Gender : </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="age">Age : </string>
+    <string name="year">years</string>
+    <string name="submit_txt">Submit</string>
+    <string name="division_select">Select Division</string>
+    <string name="range_select">Select Range</string>
+    <string name="section_select">Select Section</string>
+    <string name="beat_select">Select Beat</string>
+    <string name="ok">ok</string>
+    <string name="choose_file">Image Message </string>
+    <string name="voice_msg">Voice Message </string>
+    <string name="text_msg">Text Message </string>
+    <string name="video_msg">Video Message </string>
+    <string name="view_report">View Report </string>
+    <string name="sync_txt">Report Sync </string>
+    <string name="all_saved_report">All Saved Report</string>
+    <string name="record_a_message">Record a Message</string>
+    <string name="submit">Submit</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="play">Play</string>
+    <string name="enter_something">Enter something ...</string>
+    <string name="heading_towards">Village name/elephant moving towards</string>
+    <string name="write_a_message">Write a Message</string>
+    <string name="capture_photo">Capture a photo</string>
+    <string name="data_to_sync">data to sync</string>
+    <string name="click_to_take_photo">Click to take photo</string>
+    <string name="viewReport">View Report</string>
+    <string name="save_report">Do you want to save report ?</string>
+    <string name="save_before_send">Please check your data before save ?</string>
+    <string name="warning">Warning</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="capture_image_toast">Please capture image !</string>
+    <string name="text_msg_toast">Please enter some message if any !</string>
+    <string name="video_msg_toast">Please select video !</string>
+    <string name="voice_msg_toast">Please record voice to go forward !</string>
+    <string name="exit_msg">Are you sure you want to exit?</string>
+    <string name="saved_successfully">Data saved successfully</string>
+    <string name="no_data_to_sync">No data to sync</string>
+    <string name="pending_to_sync">Pending to sync</string>
+    <string name="do_you_realy_want_to_sync">Do you really want to sync ?</string>
+    <string name="location_automatic_manual_txt">Do you want to take your location automatically or manually ?</string>
+    <string name="automatic">Automatic</string>
+    <string name="manual">Manually</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="logout_msg">Do you want to logout the app ?</string>
+    <string name="username">Username  :</string>
+    <string name="mobile">Mobile   :</string>
+    <string name="division">Division   :</string>
+    <string name="range">Range   :</string>
+    <string name="section">Section   :</string>
+    <string name="beat">Beat   :</string>
+    <string name="edit_image">Edit image</string>
+    <string name="already_syncing_report">Already syncing reports. Please wait...</string>
+    <string name="saved_report_sent_to_server">Saved report sent to server. please wait ...</string>
+    <string name="success_sent_to_server">Successfully report sent to server</string>
+
+
+</resources>

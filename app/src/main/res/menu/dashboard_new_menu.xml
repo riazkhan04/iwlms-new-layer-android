@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reporting_id"
+        android:title="Reporting"
+        android:icon="@drawable/ic_reporting"
+        android:iconTint="@color/white" />
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:iconTint="@color/white"/>
+    <item
+        android:id="@+id/map_view"
+        android:title="Map View"
+        android:icon="@drawable/ic_mapview"
+        android:iconTint="@color/white" />
+
+
+    <item
+        android:id="@+id/view_report"
+        android:title="View Report"
+        android:icon="@drawable/ic_view_data"
+        android:iconTint="@color/white" />
+
+</menu>

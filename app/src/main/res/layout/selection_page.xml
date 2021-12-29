@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_RL"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="@drawable/common_screen"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/welcome_txt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:layout_weight="1"
+            android:layout_gravity="left|center"
+            android:gravity="left|center"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:text="Welcome"/>
+
+        <ImageView
+            android:id="@+id/logout_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:src="@drawable/menu_dots"
+            app:tint="@color/white" />
+
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/logout_icon"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:padding="2dp"-->
+<!--            app:civ_border_width="1dp"-->
+<!--            app:civ_border_color="@color/white"-->
+<!--            android:src="@drawable/ic_elephant"-->
+<!--            android:tint="@color/textDark"/>-->
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/transparent_bg"
+        android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="left|center"
+        android:src="@drawable/iwlms_logo"
+        android:gravity="left|center"
+        android:layout_marginLeft="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/selection_recyclerV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:paddingTop="30dp" />
+
+        <TextView
+            android:id="@+id/iwlms_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/iwlms_initiative"/>
+
+<!--        <ProgressBar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="?android:attr/progressBarStyleHorizontal"-->
+<!--            android:indeterminate="true"/>-->
+
+
+
+    </LinearLayout>
+</RelativeLayout>

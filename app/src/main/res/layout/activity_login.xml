@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.orsac.android.pccfwildlife.Activities.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/mainbg"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_bg"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="395dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+            <View
+                android:id="@+id/viw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/box"/>
+
+            <RelativeLayout
+                android:id="@+id/relat"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="116dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wildlife"
+                        android:textSize="28dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"/>
+
+                    <Space
+                        android:layout_width="7dp"
+                        android:layout_height="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Odisha"
+                        android:textSize="28dp"
+                        android:gravity="left"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_til"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/rect_box_white_bg"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left|center"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                app:hintTextColor="@color/textDark"
+                android:hint="Username">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/UserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:textColor="@color/textDark"
+                    android:textColorHint="@color/text"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="18dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_til"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rect_box_white_bg"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    app:hintTextColor="@color/textDark"
+                    app:passwordToggleEnabled="true"
+                    android:hint="Password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:textColor="@color/textDark"
+                        android:textColorHint="@color/text"
+                        android:background="@android:color/transparent"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textSize="18dp"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--<EditText-->
+                    <!--android:id="@+id/UserName"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:layout_marginLeft="50dp"-->
+                    <!--android:layout_marginRight="50dp"-->
+                    <!--android:layout_marginTop="30dp"-->
+                    <!--android:textColor="@color/textDark"-->
+                    <!--android:background="@drawable/box2"-->
+                    <!--android:foreground="?attr/selectableItemBackgroundBorderless"-->
+                    <!--android:gravity="center"-->
+                    <!--android:hint="Username"-->
+                    <!--android:paddingLeft="3dp"-->
+                    <!--android:paddingRight="3dp"-->
+                    <!--android:textColorHint="@color/text"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textCursorDrawable="@drawable/edittext_bg"-->
+                    <!--android:textSize="18dp" />-->
+                <!--<View-->
+                    <!--android:id="@+id/line"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="2dp"-->
+                    <!--android:layout_marginTop="-10dp"-->
+                    <!--android:layout_marginLeft="50dp"-->
+                    <!--android:layout_marginRight="50dp"-->
+                    <!--android:layout_below="@+id/text"-->
+                    <!--android:background="@color/white"/>-->
+
+
+                <!--<EditText-->
+                    <!--android:id="@+id/password"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:paddingLeft="3dp"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:paddingRight="3dp"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textDark"-->
+                    <!--android:foreground="?attr/selectableItemBackgroundBorderless"-->
+                    <!--android:layout_marginLeft="50dp"-->
+                    <!--android:layout_marginRight="50dp"-->
+                    <!--android:textColorHint="@color/text"-->
+                    <!--android:background="@drawable/rect_box_white_bg"-->
+                    <!--android:layout_marginTop="15dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:textCursorDrawable="@drawable/edittext_bg"-->
+                    <!--android:hint="Password"-->
+                    <!--android:inputType="textEmailAddress"/>-->
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="2dp"-->
+                    <!--android:layout_marginTop="-10dp"-->
+                    <!--android:layout_marginLeft="50dp"-->
+                    <!--android:layout_marginRight="50dp"-->
+                    <!--android:layout_below="@+id/text"-->
+                    <!--android:background="@color/white"/>-->
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Log in"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/green"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/box2"/>
+
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_Photo_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:foregroundGravity="center"
+                android:src="@drawable/logo"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

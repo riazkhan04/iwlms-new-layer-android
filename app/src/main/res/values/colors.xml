@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#35A537</color>-->
+    <!--<color name="colorPrimaryDark">#000000</color>-->
+    <!--<color name="colorAccent">#35A537</color> -->
+    <color name="colorPrimary">#068d06</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#3bad13</color>
+
+    <color name="blue">#245CA6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#E34614</color>
+    <color name="divsion_boundary_color">#831416</color>
+    <color name="state_boundary_color">#e64f04</color>
+    <color name="circle_boundary_color">#200584</color>
+    <color name="range_boundary_color">#ffa500</color>
+    <color name="range_boundary_transparent">#22ffa500</color>
+    <color name="edit_orange">#f78b31</color>
+    <color name="dark_pink">#D8447F</color>
+    <color name="off_white">#f4f4f4</color>
+    <color name="black">#000000</color>
+    <color name="green">#068d06</color>
+    <color name="light_green">#70a971</color>
+    <color name="lightest_green">#8fc190</color>
+    <color name="tranparent_green">#2235A537</color>
+    <color name="tranparent_grey">#60CCCFCC</color>
+    <color name="tranparent_green_lil">#9935A537</color>
+    <color name="tranparent_red_lil">#F5D6453A</color>
+    <color name="tranparent_white">#99ffffff</color>
+    <color name="tranparent_bg">#cfffffff</color>
+    <color name="bordergreen">#017103</color>
+    <color name="text">#BEBEBE</color>
+    <color name="textDark">#838080</color>
+    <color name="light_grey">#A39F9F</color>
+    <color name="light_black">#494646</color>
+    <color name="bg">#EFEFEF</color>
+    <color name="transparent_bg">#90ffffff</color>
+    <color name="transparent_black_bg">#909e9b9b</color>
+    <color name="transparent_grey_bg">#909b9e98</color>
+    <color name="transparent_white_dark">#F0FFFFFF</color>
+<!--    New color code-->
+    <color name="underline_color">#dfff45</color>
+    <color name="app_green">#3bad13</color>
+    <color name="app_dark_green">#026902</color>
+    <color name="app_logo_green">#068d06</color>
+    <color name="selected_option">#009688</color>
+
+<!--    Reporting color dashboard-->
+    <color name="all_report_color">#042653</color>
+    <color name="vulnerable_color">#aab31d</color>
+    <color name="all_report_background_color">#094a9e</color>
+    <color name="direct_report_color">#6ae29a</color>
+    <color name="indirect_report_color">#53cbff</color>
+    <color name="nil_report_color">#ca71ff</color>
+    <color name="elephant_death_color">#ffaba0</color>
+    <color name="incident_color">#fac676</color>
+
+<!--    Chart color -->
+    <color name="chart_purple">#7f6084</color>
+    <color name="chart_orange">#e59566</color>
+    <color name="chart_lime">#9bbb58</color>
+    <color name="chart_green">#23bfaa</color>
+    <color name="chart_blue">#4f81bc</color>
+    <color name="chart_red">#c0504e</color>
+
+</resources>
